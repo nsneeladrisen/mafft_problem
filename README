@@ -43,6 +43,7 @@ Use MAFFT to align the query sequence (Q12767-1.20.1110.10-FF-000019.fasta) to t
 - HMMER - hmmer-3.3.2
 - MAFFT - mafft-7.475-with-extensions
 - hh-suite - https://github.com/soedinglab/hh-suite (dated ~Aug 2020)
+- neff - https://github.com/gjoni/gremlin3
 
 ## Dataset
 1. Build the hmm from the funfam MSA using 1.20.1110.10-FF-000019.faa as input and 1.20.1110.10-FF-000019.hmm as output - 
@@ -69,24 +70,3 @@ perl /home/ucbtenx/reformat.pl /home/ucbtenx/hmmsearch_results/$b.sto /home/ucbt
 /home/ucbtenx/mafft/bin/mafft --add /home/ucbtenx/cath_domain_fasta/$a --reorder /home/ucbtenx/hmmsearch_results/$b.fas> /home/ucbtenx/hmmsearch_results/$b-query.fas
 ```
 
-This step creates a problem as stated below -
-
-```
-inputfile = orig
-53434 x 2723 - 219 p
-nadd = 1
-nthread = 0
-nthreadpair = 0
-nthreadtb = 0
-ppenalty_ex = 0
-stacksize: 8192 kb->10436 kb
-rescale = 1
-Gap Penalty = -1.53, +0.00, +0.00
-
-
-
-Making a distance matrix ..
-
-There are 546 ambiguous characters.
- 3001 / 53434/SAN/cath/cath_v4_3_0/neel/mafft_installation/mafft_installation/bin/mafft: line 2718: 20532 Killed                  "$prefix/disttbfast" -q $npickup -E $cycledisttbfast -V "-"$gopdist -s $unalignlevel $legacygapopt $mergearg -W $tuplesize $termgapopt $outnum $addarg $add2ndhalfarg -C $numthreads-$numthreadstb $memopt $weightopt $treeinopt $treeoutopt $distoutopt $seqtype $model -g $gexp -f "-"$gop -Q $spfactor -h $aof $param_fft $algopt $treealg $scoreoutarg $anchoropt -x $maxanchorseparation $oneiterationopt < infile > pre 2>> "$progressfile"
- ```
