@@ -32,17 +32,17 @@ There are 546 ambiguous characters.
 
 ## Minimal steps to reproduce
 
-
-
-Note: the intention here is to isolate the problem to the simplest possible case - remove all external factors and dependencies that might complicate matters.
+Use MAFFT to align the query sequence (Q12767-1.20.1110.10-FF-000019.fasta) to the the aligned fasta (Q12767-1.20.1110.10-FF-000019.fas) created in the previous step. This creates the aligned query with the MSA in Q12767-1.20.1110.10-FF-000019-quey.fas - 
 
 ```
-program -arg input > output 
+/home/ucbtenx/mafft/bin/mafft --add /home/ucbtenx/cath_domain_fasta/$a --reorder /home/ucbtenx/hmmsearch_results/$b.fas> /home/ucbtenx/hmmsearch_results/$b-query.fas
 ```
 
 ## Environment
 
-Report any useful details about the environment: OS, program versions, etc.
+- HMMER - hmmer-3.3.2
+- MAFFT - mafft-7.475-with-extensions
+- hh-suite - https://github.com/soedinglab/hh-suite (dated ~Aug 2020)
 
 ## Dataset
 1. Build the hmm from the funfam MSA using 1.20.1110.10-FF-000019.faa as input and 1.20.1110.10-FF-000019.hmm as output - 
